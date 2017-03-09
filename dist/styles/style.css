@@ -1,0 +1,25 @@
+* {
+    font-family: Raleway;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+#sidebar {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    margin-right: 5rem;
+    padding: 2rem;
+    background-color: aquamarine;
+    color: darkslategray;
+}
+
+.room_names {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
