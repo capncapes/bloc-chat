@@ -1,8 +1,8 @@
 <section id="sidebar">
     <h1>Bloc Chat</h1>
-    <table ng-repeat="room in home.rooms">
+    <table ng-repeat="room in home.rooms.all">
         <tr>
-            <td class="room_names">{{ room }}</td>
+            <td class="room_names">{{ home.rooms.all[$index].$value }}</td>
         </tr>
     </table>
 </section>
