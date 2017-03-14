@@ -1,9 +1,9 @@
 <section id="sidebar">
-    <h1>Bloc Chat</h1>
-    <button class="btn new-room-btn" type="button" ng-click="home.addRoom()">New Room</button>
-    <table ng-repeat="room in home.rooms.all">
-        <tr>
-            <td class="room_names">{{ home.rooms.all[$index].$value }}</td>
+    <h1 id="title">Bloc Chat</h1>
+    <button class="btn new-room-btn" type="button" ng-click="home.addRoom()"><i class="fa fa-plus"></i></button>
+    <table>
+        <tr ng-repeat="room in home.rooms.all">
+            <td class="room_names">{{ home.rooms.all[$index].name }}</td>
         </tr>
     </table>
 </section>

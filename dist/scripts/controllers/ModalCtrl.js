@@ -7,6 +7,7 @@
         this.submit = function() {
             Room.add(this.newRoom);
             $uibModalInstance.close();
+            console.log(this.newRoom.name);
         };
     }
     

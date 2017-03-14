@@ -1,5 +1,6 @@
 * {
     font-family: Raleway;
+    color: #333;
 }
 
 h1 {
@@ -12,14 +13,61 @@ h1 {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 30%;
+    width: 25%;
     margin-right: 5rem;
-    padding: 2rem;
-    background-color: aquamarine;
-    color: darkslategray;
+    padding: 3rem 2rem;
+    border-right: 3px solid #807D15;
+    background-color: #D4D26A;
+}
+
+#title {
+    display: inline;
 }
 
 .room_names {
-    font-weight: 400;
-    font-size: 0.9rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.modal {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    width: 20rem;
+    margin-left: -10rem;
+    text-align: center;
+    background-color: #88CC88;
+    border: 3px solid #004400;
+    z-index: 1000;
+}
+
+.modal_header, .modal_body, .modal_buttons {
+    margin: 2rem;
+}
+
+.btn {
+    border-style: solid;
+    border-radius: 3px;
+}
+
+.new-room-btn {
+    display: inline;
+    float: right;
+    font-size: 1.1rem;
+    color: #807D15;
+    cursor: pointer;
+    background-color: #88CC88;
+    border-color: #004400;
+}
+
+.new-room-btn:hover {
+    background-color: #55AA55;
+}
+
+.btn-primary {
+    background-color: #9575AB;
+}
+
+.btn-cancel {
+    background-color: #D46A6A;
 }
