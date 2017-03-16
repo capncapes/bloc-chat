@@ -1,9 +1,17 @@
 <section id="sidebar">
     <h1 id="title">Bloc Chat</h1>
+    <h2 class="sidebar_title">Chat Rooms</h2>
     <button class="btn new-room-btn" type="button" ng-click="home.addRoom()"><i class="fa fa-plus"></i></button>
     <table>
         <tr ng-repeat="room in home.rooms.all">
-            <td class="room_names">{{ home.rooms.all[$index].name }}</td>
+            <td class="room_names" ng-click="setActiveRoom()">{{ home.rooms.all[$index].name }}</td>
         </tr>
     </table>
+</section>
+<section id="chat_room" ng-controller="HomeCtrl">
+    <h2 id="active_room_title">{{ room.name }}</h2>
+    <div class="active_room_user">John Doe</div>
+    <div class="active_room_message_box">
+        <p class="user_messages">Hello World!</p><span class="message_timestamp">12:00 pm</span>
+    </div>
 </section>

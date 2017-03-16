@@ -1,32 +1,89 @@
 * {
     font-family: Raleway;
-    color: #333;
+    color: #373A42;
 }
 
 h1 {
     font-weight: 700;
+    font-size: 2rem;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 #sidebar {
-    display: inline-block;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 25%;
+    width: 10rem;
     margin-right: 5rem;
     padding: 3rem 2rem;
     border-right: 3px solid #807D15;
-    background-color: #D4D26A;
+    background-color: #FBF495;
+    z-index: 1;
 }
 
-#title {
+#sidebar:after {
+    position: absolute;
+    content: "\f086";
+    font-family: FontAwesome;
+    font-size: 10rem;
+    color: #FFD772;
+    top: 50%;
+    left: 50%;
+    margin-left: -5rem;
+    z-index: 2;
+    overflow: hidden;
+}
+
+#chat_room {
+    position: relative;
+    top: 0;
+    margin-left: 16rem;
+    padding: 1rem 2rem;
+}
+
+.active_room_user {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.active_room_user:before {
+    display: inline-block;
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 17px;
+    content: "\f007";
+    margin-left: -20px;
+}
+
+.active_room_message_box {
+    font-size: 0.8rem;
+}
+
+.user_messages {
+    display: inline;
+    color: #1A5AB6;
+    font-weight: 600;
+}
+
+.message_timestamp {
+    position: relative;
+    float: right;
+}
+
+#title, #sidebar_title {
     display: inline;
 }
 
 .room_names {
     font-weight: 500;
     font-size: 1rem;
+    cursor: pointer;
+    z-index: 3;
 }
 
 .modal {
@@ -54,14 +111,18 @@ h1 {
     display: inline;
     float: right;
     font-size: 1.1rem;
-    color: #807D15;
+    color: #fff;
     cursor: pointer;
-    background-color: #88CC88;
-    border-color: #004400;
+    background-color: #6094B3;
+    border-color: #1A5AB6;
+}
+
+.new-room-btn i {
+    color: #fff;
 }
 
 .new-room-btn:hover {
-    background-color: #55AA55;
+    background-color: #4F82A2;
 }
 
 .btn-primary {
