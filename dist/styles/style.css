@@ -9,8 +9,12 @@ h1 {
 }
 
 h2 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.25rem;
+}
+
+#title {
+    margin: 0 3rem;
 }
 
 #sidebar {
@@ -18,11 +22,10 @@ h2 {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 10rem;
     margin-right: 5rem;
-    padding: 3rem 2rem;
-    border-right: 3px solid #807D15;
-    background-color: #FBF495;
+    padding: 3rem 0;
+    border-right: 3px solid #373A42;
+    background-color: #e4e4e4;
     z-index: 1;
 }
 
@@ -31,7 +34,7 @@ h2 {
     content: "\f086";
     font-family: FontAwesome;
     font-size: 10rem;
-    color: #FFD772;
+    color: #d3d3d3;
     top: 50%;
     left: 50%;
     margin-left: -5rem;
@@ -39,10 +42,26 @@ h2 {
     overflow: hidden;
 }
 
+#sidebar_title_container {
+    position: relative;
+    margin: 3rem 0 1.5rem 0;
+    height: 3rem;
+    width: 100%;
+    line-height: 3rem;
+    background-color: #373A42;
+}
+
+.sidebar_title {
+    display: inline;
+    margin: 0 1rem 0 3rem;
+    color: #717580;
+}
+
 #chat_room {
     position: relative;
     top: 0;
-    margin-left: 16rem;
+    margin-top: 5rem;
+    margin-left: 18rem;
     padding: 1rem 2rem;
 }
 
@@ -79,11 +98,35 @@ h2 {
     display: inline;
 }
 
+div.room_table {
+    width: 100%;
+}
+
+.room_row {
+    display: block;
+    margin-right: 1rem;
+    width: 100%;
+    cursor: pointer;
+    background-color: #e4e4e4;
+}
+
+.room_row:hover {
+    background-color: orange;
+}
+
 .room_names {
+    display: inline-block;
+    margin-left: 3rem;
     font-weight: 500;
     font-size: 1rem;
-    cursor: pointer;
+    line-height: 2rem;
     z-index: 3;
+}
+
+.room_names:hover {
+    display: inline-block;
+    position: relative;
+    background-color: orange;
 }
 
 .modal {
@@ -108,21 +151,24 @@ h2 {
 }
 
 .new-room-btn {
-    display: inline;
     float: right;
-    font-size: 1.1rem;
-    color: #fff;
+    font-size: 1.25rem;
+    width: 3rem;
+    border-left: 3px solid #717580;
+    text-align: center;
     cursor: pointer;
-    background-color: #6094B3;
-    border-color: #1A5AB6;
 }
 
 .new-room-btn i {
-    color: #fff;
+    color: #717580;
 }
 
 .new-room-btn:hover {
-    background-color: #4F82A2;
+    background-color: #717580;
+}
+
+.new-room-btn:hover > i {
+    color: #fff;
 }
 
 .btn-primary {
