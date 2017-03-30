@@ -38,7 +38,7 @@ h2 {
     top: 50%;
     left: 50%;
     margin-left: -5rem;
-    z-index: 2;
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -107,7 +107,6 @@ div.room_table {
     margin-right: 1rem;
     width: 100%;
     cursor: pointer;
-    background-color: #e4e4e4;
 }
 
 .room_row:hover {
@@ -116,6 +115,7 @@ div.room_table {
 
 .room_names {
     display: inline-block;
+    position: relative;
     margin-left: 3rem;
     font-weight: 500;
     font-size: 1rem;
