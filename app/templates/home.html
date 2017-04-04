@@ -12,9 +12,10 @@
 </section>
 <section id="chat_room" ng-controller="HomeCtrl as home">
     <h2 id="active_room_title">{{ activeRoomName }}</h2>
-    <div class="messages_body" ng-repeat="message in activeMessages">
-        <div class="username">{{ activeMessages.username }}</div>
-        <div class="user_message">{{ activeMessages.content }}</div>
-        <div class="timestamp">{{ activeMessages.sentAt }}</div>
+    <div class="messages_body" ng-repeat="message in activeChatRoom">
+        <div class="username">{{ activeMsgArray.username }}</div>
+        <div class="user_message">{{ activeMessage }}</div>
+        <div class="user_message" style="color: red">{{ value }}</div>
+        <div class="timestamp">{{ activeTimestamp }}</div>
     </div>
 </section>

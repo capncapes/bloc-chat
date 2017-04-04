@@ -4,8 +4,6 @@
         this.rooms = Room;
         this.messages = Message;
         
-        console.log(this.messages);
-        
         this.addRoom = function() {
             $uibModal.open({
                 controller: 'ModalCtrl as modal',
@@ -16,11 +14,20 @@
 
         $scope.setActiveRoom = function(room) {
             activeRoom = room;
+            activeMsgArray = [];
+            
+            $scope.activeChatRoom = Message.getByRoomId(activeRoom.$id);
             $scope.activeRoomName = activeRoom.name;
+            $scope.currentActiveRoom = Message.getByRoomId(activeRoom.$id);
+            $scope.activeUsername = $scope.currentActiveRoom.username;
+            $scope.activeMessage = $scope.currentActiveRoom.content;
+            $scope.activeTimestamp = $scope.currentActiveRoom.sentAt;
             
-            $scope.activeMessages = Message.getByRoomId(activeRoom.$id);
+            activeMsgArray.push($scope.currentActiveRoom);
+            // activeMsgArray.push($scope.activeMessage);
+            // activeMsgArray.push($scope.activeTimestamp);
             
-            console.log($scope.activeMessages);
+            console.log(activeMsgArray);
         };
     }
     
