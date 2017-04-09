@@ -3,8 +3,8 @@
         var ref = firebase.database().ref().child("messages");
         var messages = $firebaseArray(ref);
         
-        var messageArray = messages;
-        console.log(messageArray);
+        console.log(messages);
+        activeMsgArray = [];
         
         return {
             getByRoomId: function(roomId) {
@@ -13,7 +13,8 @@
                     snap = snapshot.val();
                 });
                 
-                return snap;
+                activeMsgArray.push(snap);
+                console.log(activeMsgArray);
             }
         };
     }
