@@ -79,17 +79,23 @@ h2 {
     margin-left: -20px;
 }
 
-.active_room_message_box {
+.messages_body {
     font-size: 0.8rem;
 }
 
-.user_messages {
-    display: inline;
+.username {
+    font-size: 1rem;
     color: #1A5AB6;
+    font-weight: 700;
+    padding: 1rem 0 0.3rem 0;
+}
+
+.user_message {
+    display: inline;
     font-weight: 600;
 }
 
-.message_timestamp {
+.timestamp {
     position: relative;
     float: right;
 }
@@ -110,7 +116,7 @@ div.room_table {
 }
 
 .room_row:hover {
-    background-color: orange;
+    background-color: #D49A6A;
 }
 
 .room_names {
@@ -126,7 +132,7 @@ div.room_table {
 .room_names:hover {
     display: inline-block;
     position: relative;
-    background-color: orange;
+    background-color: #D49A6A;
 }
 
 .modal {
@@ -136,8 +142,8 @@ div.room_table {
     width: 20rem;
     margin-left: -10rem;
     text-align: center;
-    background-color: #88CC88;
-    border: 3px solid #004400;
+    background-color: #FFD1AA;
+    border: 2px solid #804515;
     z-index: 1000;
 }
 
@@ -145,8 +151,20 @@ div.room_table {
     margin: 2rem;
 }
 
-.btn {
-    border-style: solid;
+.modal_body input {
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+.modal_body input[type="text"]:focus {
+    border: 1px solid #777;
+    box-shadow: 0 0 5px 1px #999;
+}
+
+.modal_buttons button {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #AA7939;
     border-radius: 3px;
 }
 

@@ -15,14 +15,10 @@
         $scope.setActiveRoom = function(room) {
             activeRoom = room;
             
-            $scope.activeChatRoom = Message.getByRoomId(activeRoom.$id);
             $scope.activeRoomName = activeRoom.name;
             $scope.currentActiveRoom = Message.getByRoomId(activeRoom.$id);
-            $scope.activeUsername = $scope.currentActiveRoom.username;
-            $scope.activeMessage = $scope.currentActiveRoom.content;
-            $scope.activeTimestamp = $scope.currentActiveRoom.sentAt;
             
-            
+            console.log($scope.currentActiveRoom);
         };
     }
     
