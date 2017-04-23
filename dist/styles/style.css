@@ -49,12 +49,14 @@ h2 {
     width: 100%;
     line-height: 3rem;
     background-color: #373A42;
+    z-index: 2;
 }
 
 .sidebar_title {
     display: inline;
     margin: 0 1rem 0 3rem;
     color: #717580;
+    z-index: 2;
 }
 
 #chat_room {
@@ -116,7 +118,7 @@ div.room_table {
 }
 
 .room_row:hover {
-    background-color: #D49A6A;
+    background-color: #f98720;
 }
 
 .room_names {
@@ -129,21 +131,25 @@ div.room_table {
     z-index: 3;
 }
 
-.room_names:hover {
-    display: inline-block;
-    position: relative;
-    background-color: #D49A6A;
+.room_row:hover > .room_names {
+    color: #fff;
 }
 
-.modal {
+div[uib-modal-window="modal-window"] {
+    display: none;
+}
+
+.modal.fade.ng-scope.ng-isolate-scope.in {
     position: absolute;
     left: 50%;
     bottom: 50%;
     width: 20rem;
     margin-left: -10rem;
+    padding: 1rem 0;
     text-align: center;
-    background-color: #FFD1AA;
-    border: 2px solid #804515;
+    background-color: #ccc;
+    border: 2px solid #383838;
+    border-radius: 2%;
     z-index: 1000;
 }
 
@@ -151,21 +157,38 @@ div.room_table {
     margin: 2rem;
 }
 
-.modal_body input {
-    padding: 10px;
-    border: 1px solid #dcdcdc;
-    transition: box-shadow 0.3s, border 0.3s;
+.modal_body p {
+    font-size: 0.8rem;
+    text-align: left;
 }
 
-.modal_body input[type="text"]:focus {
-    border: 1px solid #777;
-    box-shadow: 0 0 5px 1px #999;
+.modal_body input {
+    font-family: monospace;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border: 3px solid #fff;
+    width: 100%;
+    text-align: center;
+    transition: border 0.3s;
 }
+
+/*.modal_body input[type="text"]:focus {
+    border: 3px solid #f98720;
+}*/
 
 .modal_buttons button {
     padding: 0.5rem 0.75rem;
-    border: 2px solid #AA7939;
-    border-radius: 3px;
+    width: 100%;
+    border: 2px solid #383838;
+    border-radius: 2%;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: #fa787e;
+}
+
+.ng-valid.ng-dirty {
+    border-color: #78fa89;
 }
 
 .new-room-btn {

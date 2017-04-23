@@ -1,0 +1,12 @@
+<form name="usernameInput" class="modal" novalidate>
+    <div class="modal_header">
+        <h3 class="modal_title">Create a Username</h3>
+    </div>
+    <div class="modal_body">
+        <p>Your username must be at least four characters long.</p>
+        <input type="text" name="input" class="usernameInput" ng-model="usermodal.username" ng-minlength="4" required>
+    </div>
+    <div class="modal_buttons">
+        <button class="primary_btn" type="button" ng-click="usermodal.submit()">OK</button>
+    </div>
+</form>
