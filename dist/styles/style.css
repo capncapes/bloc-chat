@@ -24,7 +24,7 @@ h2 {
     left: 0;
     margin-right: 5rem;
     padding: 3rem 0;
-    border-right: 3px solid #373A42;
+    border-right: 3px solid #383838;
     background-color: #e4e4e4;
     z-index: 1;
 }
@@ -121,6 +121,10 @@ div.room_table {
     background-color: #f98720;
 }
 
+.active_room {
+    background-color: #f98720;
+}
+
 .room_names {
     display: inline-block;
     position: relative;
@@ -149,7 +153,7 @@ div[uib-modal-window="modal-window"] {
     text-align: center;
     background-color: #ccc;
     border: 2px solid #383838;
-    border-radius: 2%;
+    border-radius: 4px;
     z-index: 1000;
 }
 
@@ -176,11 +180,19 @@ div[uib-modal-window="modal-window"] {
     border: 3px solid #f98720;
 }*/
 
-.modal_buttons button {
+button {
     padding: 0.5rem 0.75rem;
     width: 100%;
     border: 2px solid #383838;
-    border-radius: 2%;
+    border-radius: 4px;
+}
+
+button:hover {
+    border-color: #f98720;
+}
+
+button.send_btn {
+    margin-top: 0.5rem;
 }
 
 .ng-invalid.ng-dirty {
@@ -189,6 +201,28 @@ div[uib-modal-window="modal-window"] {
 
 .ng-valid.ng-dirty {
     border-color: #78fa89;
+}
+
+.message_send {
+    display: block;
+    position: fixed;
+    padding: 1rem 1.25rem;
+    width: 25rem;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #ccc;
+    border: 3px solid #383838;
+    border-radius: 4px;
+}
+
+input[type="textarea"] {
+    width: 100%;
+    height: 5rem;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #fff;
+    resize: none;
 }
 
 .new-room-btn {

@@ -2,6 +2,7 @@
     function Message($firebaseArray) {
         var ref = firebase.database().ref().child("messages");
         var messages = $firebaseArray(ref);
+        console.log(messages);
         
         return {
             getByRoomId: function(roomId) {
@@ -14,6 +15,16 @@
                 });
                 
                 return activeMsgArray;
+            },
+            send: function(newMessage) {
+                console.log(newMessage);
+                messages.$add({ content: newMessage.$viewValue }).then(function(ref) {
+                    console.log(ref);
+                    var id = ref.key();
+                    console.log("Added record with id " + id);
+                    messages.$indexFor(id);
+                });
+                console.log(messages);
             }
         };
     }

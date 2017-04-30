@@ -10,6 +10,7 @@
                 size: 'sm'
             })
         }
+        console.log($cookies);
     }
     
     angular

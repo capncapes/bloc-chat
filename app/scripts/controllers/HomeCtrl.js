@@ -14,11 +14,21 @@
 
         $scope.setActiveRoom = function(room) {
             activeRoom = room;
+            var roomRows = document.getElementsByClassName('room_row');
             
             $scope.activeRoomName = activeRoom.name;
             $scope.currentActiveRoom = Message.getByRoomId(activeRoom.$id);
             
             console.log($scope.currentActiveRoom);
+        };
+        
+        /*for (var i = 0; i < roomRows.length; i++)
+                if (roomRows[i].classList.contains())
+            activeRoom.style.backgroundColor = "#f98720";*/
+        
+        $scope.sendMessage = function(newMessage) {
+            $scope.messageContent = Message.send(newMessage);
+            activeRoom.$id
         };
     }
     

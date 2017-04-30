@@ -6,7 +6,7 @@
     </div>
     <div class="room_table">
         <div class="room_row" ng-repeat="room in home.rooms.all">
-            <div class="room_names" ng-click="setActiveRoom(room)">{{ home.rooms.all[$index].name }}</div>
+            <div class="room_names" ng-click="setActiveRoom(room)" ng-class="{ 'active_room': activeRoom }">{{ home.rooms.all[$index].name }}</div>
         </div>
     </div>
 </section>
@@ -16,5 +16,11 @@
         <div class="username">{{ message.username }}</div>
         <div class="user_message">{{ message.content }}</div>
         <div class="timestamp">{{ message.sentAt }}</div>
+    </div>
+    <div class="message_send">
+        <form name="messageTextbox" class="message_textbox" novalidate>
+            <input type="textarea" name="messageInput" cols="10" wrap="hard" placeholder="Send a message..." class="message_input" ng-model="home.messages.content">
+            <button class="send_btn" type="button" ng-click="sendMessage(messageTextbox.messageInput)">Send</button>
+        </form>
     </div>
 </section>
