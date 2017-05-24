@@ -3,14 +3,13 @@
         var currentUser = $cookies.get('blocChatCurrentUser');
         if (!currentUser || currentUser === '') {
             $uibModal.open({
-                backdrop: true,
+                backdrop: 'static',
                 controller: 'UserModalCtrl as usermodal',
                 keyboard: false,
                 templateUrl: '/templates/userModal.html',
                 size: 'sm'
             })
         }
-        console.log($cookies);
     }
     
     angular

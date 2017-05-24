@@ -180,6 +180,11 @@ div[uib-modal-window="modal-window"] {
     border: 3px solid #f98720;
 }*/
 
+.bold_italic {
+    font-weight: 700;
+    font-style: italic;
+}
+
 button {
     padding: 0.5rem 0.75rem;
     width: 100%;

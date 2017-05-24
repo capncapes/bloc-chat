@@ -20,7 +20,7 @@
     <div class="message_send">
         <form name="messageTextbox" class="message_textbox" novalidate>
             <input type="textarea" name="messageInput" cols="10" wrap="hard" placeholder="Send a message..." class="message_input" ng-model="home.messages.content">
-            <button class="send_btn" type="button" ng-click="sendMessage(messageTextbox.messageInput)">Send</button>
+            <button class="send_btn" type="button" ng-click="sendMessage(messageTextbox.messageInput.$viewValue)">Send</button>
         </form>
     </div>
 </section>
