@@ -5,8 +5,8 @@
         <span class="new-room-btn" type="button" ng-click="home.addRoom()"><i class="fa fa-plus"></i></span>
     </div>
     <div class="room_table">
-        <div class="room_row" ng-repeat="room in home.rooms.all">
-            <div class="room_names" ng-click="setActiveRoom(room)" ng-class="{ 'active_room': activeRoom }">{{ home.rooms.all[$index].name }}</div>
+        <div class="room_row" ng-class="{ 'active_room': room.$id == activeId }" ng-repeat="room in home.rooms.all" ng-click="setActiveRoom(room)">
+            <div class="room_names">{{ home.rooms.all[$index].name }}</div>
         </div>
     </div>
 </section>
@@ -17,9 +17,9 @@
         <div class="user_message">{{ message.content }}</div>
         <div class="timestamp">{{ message.sentAt }}</div>
     </div>
-    <div class="message_send">
+    <div class="message_send" ng-show="checkActiveRoom()">
         <form name="messageTextbox" class="message_textbox" novalidate>
-            <input type="textarea" name="messageInput" cols="10" wrap="hard" placeholder="Send a message..." class="message_input" ng-model="home.messages.content">
+            <input name="messageInput" type="textarea" placeholder="Send a message..." class="message_input" ng-model="home.messages.text">
             <button class="send_btn" type="button" ng-click="sendMessage(messageTextbox.messageInput.$viewValue)">Send</button>
         </form>
     </div>

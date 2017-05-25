@@ -15,14 +15,18 @@
                 
                 return activeMsgArray;
             },
-            send: function(newMessage) {
-                console.log($cookies.blocChatCurrentUser);
+            send: function(text, activeRoom) {
                 messages.$add({
-                    content: newMessage,
-                    roomId: activeRoom.key,
+                    content: text,
+                    roomId: activeRoom.$id,
                     sentAt: Date.now(),
                     username: $cookies.blocChatCurrentUser
-                });
+                }).then(function(ref) {
+                    var id = ref.key();
+                    console.log("Added record with id " + id);
+                    messages.indexFor(id);
+                })
+                console.log(messages);
             }
         };
     }

@@ -117,11 +117,7 @@ div.room_table {
     cursor: pointer;
 }
 
-.room_row:hover {
-    background-color: #f98720;
-}
-
-.active_room {
+.room_row:hover, .active_room {
     background-color: #f98720;
 }
 
@@ -135,7 +131,7 @@ div.room_table {
     z-index: 3;
 }
 
-.room_row:hover > .room_names {
+.room_row:hover > .room_names, .active_room > .room_names {
     color: #fff;
 }
 

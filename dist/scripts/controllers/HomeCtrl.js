@@ -1,5 +1,5 @@
 (function() {
-    function HomeCtrl($scope, Room, Message, $uibModal) {
+    function HomeCtrl($scope, Room, Message, $uibModal, $cookies) {
         var database = firebase.database();
         this.rooms = Room;
         this.messages = Message;
@@ -14,29 +14,33 @@
         };
 
         $scope.setActiveRoom = function(room) {
-            activeRoom = room;
-            var roomRows = document.getElementsByClassName('room_row');
-            
-            $scope.activeRoomName = activeRoom.name;
-            $scope.currentActiveRoom = Message.getByRoomId(activeRoom.$id);
+            $scope.activeRoom = room;
+            $scope.activeId = room.$id;
+            $scope.activeRoomName = room.name;
+            $scope.currentActiveRoom = Message.getByRoomId(room.$id);
             
             console.log($scope.currentActiveRoom);
         };
         
-        /*for (var i = 0; i < roomRows.length; i++)
-                if (roomRows[i].classList.contains())
-            activeRoom.style.backgroundColor = "#f98720";*/
+        // Check if there's an active room
+        $scope.checkActiveRoom = function() {
+            if ($scope.activeRoom) {
+                return true;
+            } else {
+                return false;
+            }
+        };
         
-        $scope.sendMessage = function(newMessage) {
-            activeRoom = $scope.setActiveRoom.room;
-            $scope.messageContent = Message.send(newMessage);
-            console.log(activeRoom);
-            activeRoom.$id
+        $scope.sendMessage = function() {
+            var text = Message.text;
+            var activeRoom = $scope.activeRoom;
+            $scope.messageContent = Message.send(text, activeRoom);
+            console.log(text + " " + activeRoom.name);
         };
     }
     
     angular
         .module('blocChat')
         .service('Room', HomeCtrl)
-        .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', HomeCtrl]);
+        .controller('HomeCtrl', ['$scope', 'Room', 'Message', '$uibModal', '$cookies', HomeCtrl]);
 })();
