@@ -10,7 +10,6 @@
                 size: 'sm'
             })
         }
-        console.log($cookies.get('blocChatCurrentUser'));
     }
     
     angular

@@ -18,8 +18,6 @@
             $scope.activeId = room.$id;
             $scope.activeRoomName = room.name;
             $scope.currentActiveRoom = Message.getByRoomId(room.$id);
-            
-            console.log($scope.currentActiveRoom);
         };
         
         // Check if there's an active room
@@ -31,11 +29,9 @@
             }
         };
         
-        $scope.sendMessage = function() {
-            var text = Message.text;
-            var activeRoom = $scope.activeRoom;
-            $scope.messageContent = Message.send(text, activeRoom);
-            console.log(text + " " + activeRoom.name);
+        $scope.sendMessage = function(text) {
+            var id = $scope.activeId;
+            Message.send(text, id);
         };
     }
     

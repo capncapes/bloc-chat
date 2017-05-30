@@ -15,7 +15,7 @@
     <div class="messages_body" ng-repeat="message in currentActiveRoom">
         <div class="username">{{ message.username }}</div>
         <div class="user_message">{{ message.content }}</div>
-        <div class="timestamp">{{ message.sentAt }}</div>
+        <div class="timestamp">{{ message.sentAt | timecode }}</div>
     </div>
     <div class="message_send" ng-show="checkActiveRoom()">
         <form name="messageTextbox" class="message_textbox" novalidate>
