@@ -23,6 +23,7 @@
                     username: $cookies.get('blocChatCurrentUser')
                 };
                 messages.$add(newMessage);
+                this.text = null;
                 console.log("User " + $cookies.get('blocChatCurrentUser') + " added record with id " + id);
             }
         };
