@@ -6,6 +6,7 @@
 h1 {
     font-weight: 700;
     font-size: 2rem;
+    color: #373A42;
 }
 
 h2 {
@@ -15,18 +16,6 @@ h2 {
 
 #title {
     margin: 0 3rem;
-}
-
-#sidebar {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    margin-right: 5rem;
-    padding: 3rem 0;
-    border-right: 3px solid #383838;
-    background-color: #e4e4e4;
-    z-index: 1;
 }
 
 #sidebar:after {
@@ -65,6 +54,7 @@ h2 {
     margin-top: 5rem;
     margin-left: 18rem;
     padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.65);
 }
 
 .active_room_user {
@@ -253,4 +243,115 @@ input[type="textarea"] {
 
 .btn-cancel {
     background-color: #D46A6A;
+}
+
+@media (max-width: 375px) {
+    
+    body {
+        min-height: 100%;
+        background-image: url(../assets/images/bloc-chat-bg2.jpg);
+        background-size: cover;
+    }
+    
+    h1#title, #active_room_title {
+        line-height: 39px;
+        vertical-align: middle;
+    }
+    
+    h1#title {
+        font-size: 1.75rem;
+    }
+    
+    #active_room_title {
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    #nav_icon {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-top: 3rem;
+        padding-right: 3rem;
+        float: right;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    
+    .mobile_nav {
+        width: 35px;
+        height: 5px;
+        background-color: #373A42;
+        margin: 6px 0;
+    }
+    
+    #sidebar {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 3rem 0;
+        background-color: #e4e4e4;
+        z-index: 1;
+    }
+    
+    #chat_room {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .messages_body {
+        margin-left: 0.5rem;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1300px) {
+    
+    body {
+        width: 100%;
+        background-image: url(../assets/images/bloc-chat-bg1.jpg);
+        background-size: cover;
+    }
+    
+    #sidebar {
+        position: absolute;
+        right: 0;
+        padding: 3rem 0;
+        background-color: #e4e4e4;
+        z-index: 1;
+    }
+}
+
+@media (min-width: 1301px) {
+    
+    body {
+        width: 100%;
+        background-image: url(../assets/images/bloc-chat-bg1.jpg);
+        background-size: cover;
+    }
+    
+    #nav_icon {
+        display: none;
+    }
+    
+    #sidebar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin-right: 5rem;
+        padding: 3rem 0;
+        border-right: 3px solid #383838;
+        background-color: #e4e4e4;
+        z-index: 1;
+    }
+    
+    #chat_room {
+        max-height: 600px;
+        overflow: auto;
+    }
 }

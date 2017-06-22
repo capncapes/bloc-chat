@@ -18,6 +18,15 @@
             $scope.activeId = room.$id;
             $scope.activeRoomName = room.name;
             $scope.currentActiveRoom = Message.getByRoomId(room.$id);
+            
+            if (screen.width < 800) {
+                $scope.sidebar = document.getElementById('sidebar');
+                $scope.sidebar.style.display = "none";
+                
+                document.body.style.backgroundImage = "url('../assets/images/bloc-chat-bg2b.jpg')";
+            } else {
+                document.body.style.backgroundImage = "url('../assets/images/bloc-chat-bg1b.jpg')";
+            }
         };
         
         // Check if there's an active room
@@ -32,6 +41,15 @@
         $scope.sendMessage = function(text) {
             var id = $scope.activeId;
             Message.send(text, id);
+        };
+        
+        this.toggleRooms = function() {
+            var sidebar = document.getElementById('sidebar');
+            if (sidebar.style.display === "none") {
+                sidebar.style.display = "inherit";
+            } else {
+                sidebar.style.display = "none"
+            }
         };
     }
     
