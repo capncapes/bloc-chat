@@ -3,6 +3,11 @@
     color: #373A42;
 }
 
+body {
+    background-size: auto;
+    background-color: #fdfdaf;
+}
+
 h1 {
     font-weight: 700;
     font-size: 2rem;
